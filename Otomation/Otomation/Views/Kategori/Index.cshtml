@@ -1,0 +1,116 @@
+﻿@using Otomation.Models.Sınıflar
+@model List<Kategori>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@*<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>KategoriAdı</th>
+        <th colspan="2"><a href="/Kategori/KategoriEkle" class="btn btn-outline-warning"> Yeni Kategori Oluştur</a> </th>
+    </tr>
+
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>
+                @k.KategoriID
+            </td>
+            <td>
+                @k.KategoriAd
+            </td>
+            <td>
+                <a href="/Kategori/KategoriGetir/@k.KategoriID"
+                   class="btn btn-outline-primary">Güncelle</a>
+            </td>
+            <td>
+                <a href="/Kategori/KategoriSil/@k.KategoriID"
+                   class="btn btn-outline-danger">Sil</a>
+            </td>
+            <td>
+                <a href="/Kategori/KategoriDetay/@k.KategoriID"
+                   class="btn btn-outline-secondary">Ürünler</a>
+            </td>
+        </tr>
+    }
+</table>*@
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <!-- /.navbar -->
+        <!-- Main Sidebar Container -->
+        <!-- Content Wrapper. Contains page content -->
+        <!-- Content Header (Page header) -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+
+                        <!-- /.card -->
+
+                        <div class="card">
+                            <div class="card-header">
+                                <a href="/Kategori/KategoriEkle" class="btn btn-outline-warning">Kategori Ekle</a>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table id="example1" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>KategoriAdı</th>
+                                            <th> Güncelle</th>
+                                            <th> Sil</th>
+                                            <th> Ürünler  </th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var k in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @k.KategoriID
+                                                </td>
+                                                <td>
+                                                    @k.KategoriAd
+                                                </td>
+                                                <td>
+                                                    <a href="/Kategori/KategoriGetir/@k.KategoriID"
+                                                       class="btn btn-outline-primary">Güncelle</a>
+                                                </td>
+                                                <td>
+                                                    <a href="/Kategori/KategoriSil/@k.KategoriID"
+                                                       class="btn btn-outline-danger" onclick="Sil()">Sil</a>
+                                                </td>
+                                                <td>
+                                                    <a href="/Kategori/KategoriDetay/@k.KategoriID"
+                                                       class="btn btn-outline-secondary">Ürünler</a>
+                                                </td>
+
+                                            </tr>
+
+                                        }
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </section>
+    </div>
+</body>

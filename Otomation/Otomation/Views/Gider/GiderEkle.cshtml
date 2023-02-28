@@ -1,0 +1,23 @@
+﻿@model Otomation.Models.Sınıflar.Gider
+@{
+    ViewBag.Title = "GiderEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Gider Ekle </h2>
+
+<br />
+<form class="form-group" method="post">
+
+    @Html.LabelFor(x => x.Aciklama)
+    @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Tarih)
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control", type = "date" })
+    <br />
+    @Html.LabelFor(x => x.Tutar)
+    @Html.TextBoxFor(x => x.Tutar, new { @class = "form-control", type = "number" })
+    <br />
+    <button type="submit" class="btn btn-outline-info" id="submitButton"> Ekle </button>
+
+</form>

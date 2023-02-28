@@ -1,0 +1,123 @@
+﻿@model Otomation.Models.Sınıflar.Class1
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>E-commerce</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/Content/plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Content/dist/css/adminlte.min.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+        <!-- Navbar Search -->
+        <li class="nav-item">
+
+    </ul>
+    <!-- Main Sidebar Container -->
+    <!-- Content Header (Page header) -->
+    <!-- Default box -->
+    <div class="card card-solid">
+        @foreach (var x in Model.deger1 )
+        {
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <h3 class="d-inline-block d-sm-none">LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3>
+                    <div class="col-12">
+                        <img src="@x.UrunGorsel" class="product-image" alt="Product Image">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <h3 class="my-3">@x.UrunAd</h3>
+
+                    <div class="bg-gray py-2 px-3 mt-4">
+                        <h4 class="mb-0">
+                            <small>Ürün Fiyatı : ₺@x.SatisFiyat</small>
+                        </h4>
+                    </div>
+
+                    <div class="mt-4">
+                        <div class="btn btn-outline-success btn-lg btn-flat">
+                            <i class="fas fa-cart-plus fa-lg mr-2"></i>
+                            Sepete Ekle
+                        </div>
+
+                        <div class="btn btn-outline-danger btn-lg btn-flat">
+                            <i class="fas fa-heart fa-lg mr-2"></i>
+                            Favorilere Ekle
+                        </div>
+                    </div>
+
+                    <div class="mt-4 product-share">
+                        <a href="#" class="text-blue">
+                            <i class="fab fa-facebook-square fa-2x"></i>
+                        </a>
+                        <a href="#" class="text-pink">
+                            <i class="fab fa-instagram-square fa-2x"></i>
+                        </a>
+                        <a href="#" class="text-blue">
+                            <i class="fab fa-twitter-square fa-2x"></i>
+                        </a>
+                        <a href="#" class="text-red">
+                            <i class="fas fa-envelope-square fa-2x"></i>
+                        </a>
+                        <a href="#" class="text-cyan">
+                            <i class="fas fa-rss-square fa-2x"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row mt-4">
+                <nav class="w-100">
+                    <div class="nav nav-tabs" id="product-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="product-desc-tab" data-toggle="tab" href="#product-desc" role="tab" aria-controls="product-desc" aria-selected="true">Description</a>
+                        <a class="nav-item nav-link" id="product-comments-tab" data-toggle="tab" href="#product-comments" role="tab" aria-controls="product-comments" aria-selected="false">Comments</a>                    </div>
+                </nav>
+                <div class="tab-content p-3" id="nav-tabContent">
+                    @foreach (var y in Model.deger2)
+                    {
+                    <div class="tab-pane fade show active" id="product-desc" role="tabpanel" aria-labelledby="product-desc-tab"> @y.urunad </div>
+                    <div class="tab-pane fade" id="product-comments" role="tabpanel" aria-labelledby="product-comments-tab"> @y.urunbilgi </div>
+                    }
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+    <!-- /.card-body -->
+
+    <script src="~/Content/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/Content/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/Content/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/Content/dist/js/demo.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.product-image-thumb').on('click', function () {
+                var $image_element = $(this).find('img')
+                $('.product-image').prop('src', $image_element.attr('src'))
+                $('.product-image-thumb.active').removeClass('active')
+                $(this).addClass('active')
+            })
+        })
+    </script>
+</body>
+</html>

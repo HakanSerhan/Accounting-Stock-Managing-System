@@ -1,0 +1,30 @@
+﻿@model Otomation.Models.Sınıflar.FaturaKalem
+@{
+    ViewBag.Title = "FaturaKalemEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> FaturaKalem Ekle </h2>
+
+<br />
+<form class="form-group" method="post">
+
+    @Html.LabelFor(x => x.Aciklama)
+    @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Miktar)
+    @Html.TextBoxFor(x => x.Miktar, new { @class = "form-control", type = "number" })
+    <br />
+    @Html.LabelFor(x => x.BirimFiyat)
+    @Html.TextBoxFor(x => x.BirimFiyat, new { @class = "form-control", type = "number" })
+    <br />
+    @Html.LabelFor(x => x.Tutar)
+    @Html.TextBoxFor(x => x.Tutar, new { @class = "form-control", type = "number" })
+    <br />
+    @Html.LabelFor(x => x.Faturalar)
+    @Html.DropDownListFor(x => x.Faturaid, (List<SelectListItem>)ViewBag.dgr3,
+    new { @class = "form-control" })
+    <br />
+    <button type="submit" class="btn btn-outline-info" id="submitButton"> Ekle </button>
+
+</form>

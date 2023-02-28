@@ -1,0 +1,132 @@
+﻿@model IEnumerable<Otomation.Models.Sınıflar.Sinifgrup>
+
+@{
+    ViewBag.Title = "Statstable";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/Content/plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Content/dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+
+
+
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>İstatistik Tabloları</h1>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Müşteri Şehir Tablosu</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>Şehir</th>
+                                            <th> </th>
+                                            <th style="width: 40px">Adet</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @{int sirano = 0; }
+                                        @foreach (var x in Model)
+                                        {
+                                            <tr>
+                                                <td>@{sirano++; } @sirano.</td>
+                                                <td>@x.Sehir</td>
+                                                <td>
+                                                    @if (x.Sayi == 1)
+                                                    {
+                                                        <div class="progress progress-xs">
+                                                            <div class="progress-bar progress-bar-danger bg-gradient-danger" style="width: 30%"></div>
+                                                        </div>
+                                                    }
+
+                                                    @if (x.Sayi == 2)
+                                                    {
+                                                        <div class="progress progress-xs">
+                                                            <div class="progress-bar progress-bar-warning bg-gradient-warning" style="width: 60%"></div>
+                                                        </div>
+                                                    }
+
+                                                    @if (x.Sayi == 3 || x.Sayi > 3)
+                                                    {
+                                                        <div class="progress progress-xs">
+                                                            <div class="progress-bar progress-bar-success bg-gradient-success" style="width: 100%"></div>
+                                                        </div>
+                                                    }
+                                                </td>
+
+                                                <td><span class="badge bg-danger">@x.Sayi</span></td>
+                                            </tr>
+
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer clearfix">
+                                <ul class="pagination pagination-sm m-0 float-right">
+                                    <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                        @Html.Action("Partial1")
+
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-6">
+                        @Html.Action("Partial2")
+                        <!-- /.card -->
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+    <script src="~/Content/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/Content/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/Content/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/Content/dist/js/demo.js"></script>
+</body>
+
+

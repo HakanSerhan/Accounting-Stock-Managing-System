@@ -1,0 +1,17 @@
+﻿@model Otomation.Models.Sınıflar.Departman
+@{
+    ViewBag.Title = "DepartmanEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Departman Ekle </h2>
+
+<br />
+<form class="form-group" method="post">
+
+    @Html.LabelFor(x => x.DepartmanAd)
+    @Html.TextBoxFor(x => x.DepartmanAd, new { @class = "form-control" })
+    <br />
+    <button type="submit" class="btn btn-outline-info" id="submitButton"> Ekle </button>
+
+</form>

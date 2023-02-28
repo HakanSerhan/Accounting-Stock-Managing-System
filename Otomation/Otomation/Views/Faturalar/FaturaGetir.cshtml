@@ -1,0 +1,39 @@
+﻿@model Otomation.Models.Sınıflar.Faturalar
+
+
+@{
+    ViewBag.Title = "FaturaGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Fatura Getir </h2>
+<br />
+@using (Html.BeginForm("FaturaGuncelle", "Faturalar", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.FaturaSeriNo)
+        @Html.TextBoxFor(x => x.FaturaSeriNo, new { @class = "form-control",type="number" })
+        <br />
+        @Html.LabelFor(x => x.FaturaSıraNo)
+        @Html.TextBoxFor(x => x.FaturaSıraNo, new { @class = "form-control", type = "number" })
+        <br />
+        @Html.LabelFor(x => x.Tarih)
+        @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control", type = "date" })
+        <br />
+        @Html.LabelFor(x => x.VergiDairesi)
+        @Html.TextBoxFor(x => x.VergiDairesi, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Saat)
+        @Html.TextBoxFor(x => x.Saat, new { @class = "form-control"  })
+        <br />
+        @Html.LabelFor(x => x.TeslimEden)
+        @Html.TextBoxFor(x => x.TeslimEden, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.TeslimAlan)
+        @Html.TextBoxFor(x => x.TeslimAlan, new { @class = "form-control" })
+        <br />
+        @Html.HiddenFor(x => x.Faturaid)
+    </div>
+
+    <button class="btn btn-outline-warning" onclick="Güncelle()"> Güncelle </button>
+}

@@ -1,0 +1,23 @@
+﻿@model Otomation.Models.Sınıflar.Admin
+@{
+    ViewBag.Title = "AdminEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Admin Ekle </h2>
+
+<br />
+<form class="form-group" method="post">
+
+    @Html.LabelFor(x => x.KullaniciAd)
+    @Html.TextBoxFor(x => x.KullaniciAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Sifre)
+    @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control", type = "password" })
+    <br />
+    @Html.LabelFor(x => x.Yetki)
+    @Html.TextBoxFor(x => x.Yetki, new { @class = "form-control" })
+    <br />
+    <button type="submit" class="btn btn-outline-info" id="submitButton" > Ekle </button>
+
+</form>

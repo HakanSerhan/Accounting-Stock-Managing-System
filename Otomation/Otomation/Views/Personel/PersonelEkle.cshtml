@@ -1,0 +1,28 @@
+﻿@model Otomation.Models.Sınıflar.Personel
+@{
+    ViewBag.Title = "PersonelEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Personel Ekle </h2>
+
+<br />
+@using(Html.BeginForm("PersonelEkle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" })) {
+<form class="form-group" method="post">
+
+    @Html.LabelFor(x => x.PersonelAd)
+    @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.PersonalSoyad)
+    @Html.TextBoxFor(x => x.PersonalSoyad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.PersonalGorsel)
+    <input type="file" name="PersonelGorsel" />
+    <br />
+    @Html.LabelFor(x => x.Departman)
+    @Html.DropDownListFor(x => x.Departmanid, (List<SelectListItem>)ViewBag.dgr2,
+    new { @class = "form-control" })
+    <br />
+    <button type="submit" class="btn btn-outline-info" id="submitButton"> Ekle </button>
+</form>
+}

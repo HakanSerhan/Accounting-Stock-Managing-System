@@ -1,0 +1,131 @@
+﻿@using Otomation.Models.Sınıflar
+@model List<Personel>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@*<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Personel Ad</th>
+        <th>Personel Soyad</th>
+        <th>Personel Gorsel</th>
+        <th>Departman</th>
+        <th colspan="2"><a href="/Personel/PersonelEkle" class="btn btn-outline-warning"> Yeni Personel Oluştur</a> </th>
+
+    </tr>
+
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>
+                @k.PersonelID
+            </td>
+            <td>
+                @k.PersonelAd
+            </td>
+            <td>
+                @k.PersonalSoyad
+            </td>
+            <td>
+                @k.PersonalGorsel
+            </td>
+            <td>
+                @k.Departman.DepartmanAd
+            </td>
+
+            <td>
+                <a href="/Personel/PersonelGetir/@k.PersonelID"
+                   class="btn btn-outline-primary">Güncelle</a>
+            </td>
+            <td>
+                <a href="/Personel/PersonelSil/@k.PersonelID"
+                   class="btn btn-outline-danger">Sil</a>
+            </td>
+
+        </tr>
+
+     }
+</table>*@
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="card">
+                            <div class="card-header">
+                                <a href="/Personel/PersonelEkle" class="btn btn-outline-warning"> Yeni Personel Oluştur</a>
+                            </div>
+
+                            <div class="card-body">
+                                <table id="example1" class="table table-bordered table-striped">
+
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Personel Ad</th>
+                                            <th>Personel Soyad</th>
+                                            <th>Personel Gorsel</th>
+                                            <th>Departman</th>
+                                            <th> Güncelle </th>
+                                            <th> Sil </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        @foreach (var k in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @k.PersonelID
+                                                </td>
+                                                <td>
+                                                    @k.PersonelAd
+                                                </td>
+                                                <td>
+                                                    @k.PersonalSoyad
+                                                </td>
+                                                <td>
+                                                   <img src="@k.PersonalGorsel"/>
+                                                </td>
+                                                <td>
+                                                    @k.Departman.DepartmanAd
+                                                </td>
+
+                                                <td>
+                                                    <a href="/Personel/PersonelGetir/@k.PersonelID"
+                                                       class="btn btn-outline-primary">Güncelle</a>
+                                                </td>
+                                                <td>
+                                                    <a href="/Personel/PersonelSil/@k.PersonelID"
+                                                       class="btn btn-outline-danger" onclick="Sil()">Sil</a>
+                                                </td>
+                                                <td>
+                                                    <a href="/Personel/PersonelProfil/@k.PersonelID"
+                                                       class="btn btn-outline-secondary">Profil</a>
+                                                </td>
+
+                                            </tr>
+
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </div>
+</body>

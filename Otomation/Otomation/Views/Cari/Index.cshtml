@@ -1,0 +1,133 @@
+﻿@using Otomation.Models.Sınıflar
+@model List<Cari>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@*<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Cari Ad</th>
+        <th>Cari Soyad</th>
+        <th>Cari Mail</th>
+        <th>Cari Sehir</th>
+        <th colspan="2"><a href="/Cari/CariEkle" class="btn btn-outline-warning"> Yeni Cari Oluştur</a> </th>
+
+    </tr>
+
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>
+                @k.Cariid
+            </td>
+            <td>
+                @k.CariAd
+            </td>
+            <td>
+                @k.CariSoyad
+            </td>
+            <td>
+                @k.CariMail
+            </td>
+            <td>
+                @k.CariSehir
+            </td>
+            <td>
+                <a href="/Cari/CariGetir/@k.Cariid"
+                   class="btn btn-outline-info">Güncelle</a>
+            </td>
+            <td>
+                <a href="/Cari/CariSil/@k.Cariid"
+                   class="btn btn-outline-danger">Sil</a>
+            </td>
+            <td>
+                <a href="/Cari/CariSatis/@k.Cariid"
+                   class="btn btn-outline-secondary">Cari Satış </a>
+            </td>
+
+        </tr>
+
+     }
+</table>*@
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="card">
+                            <div class="card-header">
+                                <a href="/Cari/CariEkle" class="btn btn-outline-warning"> Yeni Cari Oluştur</a>
+                            </div>
+
+                            <div class="card-body">
+                                <table id="example1" class="table table-bordered table-striped">
+
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>İsim</th>
+                                            <th>Soyisim</th>
+                                            <th>Mail</th>
+                                            <th>Şehir </th>
+                                            <th>Güncelle </th>
+                                            <th>Sil</th>
+                                            <th>Cari Satış</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        @foreach (var k in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @k.Cariid
+                                                </td>
+                                                <td>
+                                                    @k.CariAd
+                                                </td>
+                                                <td>
+                                                    @k.CariSoyad
+                                                </td>
+                                                <td>
+                                                    @k.CariMail
+                                                </td>
+                                                <td>
+                                                    @k.CariSehir
+                                                </td>
+                                                <td>
+                                                    <a href="/Cari/CariGetir/@k.Cariid"
+                                                       class="btn btn-outline-primary">Güncelle</a>
+                                                </td>
+                                                <td>
+                                                    <a href="/Cari/CariSil/@k.Cariid"
+                                                       class="btn btn-outline-danger" onclick="Sil()">Sil</a>
+                                                </td>
+                                                <td>
+                                                    <a href="/Cari/CariSatis/@k.Cariid"
+                                                       class="btn btn-outline-secondary">Cari Satış </a>
+                                                </td>
+                                            </tr>
+
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </div>
+</body>

@@ -1,0 +1,147 @@
+﻿@using Otomation.Models.Sınıflar
+@model List<Faturalar>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@*<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th> Seri No</th>
+        <th> Sıra No</th>
+        <th> Tarih</th>
+        <th> Vergi Dairesi</th>
+        <th> Saat </th>
+        <th> Teslim Eden</th>
+        <th> Teslim Alan </th>
+        <th colspan="2"><a href="/Faturalar/FaturaEkle" class="btn btn-outline-warning"> Yeni Fatura Oluştur</a> </th>
+
+    </tr>
+
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>
+                @k.Faturaid
+            </td>
+            <td>
+                @k.FaturaSeriNo
+            </td>
+            <td>
+                @k.FaturaSıraNo
+            </td>
+            <td>
+                @k.Tarih
+            </td>
+            <td>
+                @k.VergiDairesi
+            </td>
+            <td>
+                @k.Saat
+            </td>
+            <td>
+                @k.TeslimEden
+            </td>
+            <td>
+                @k.TeslimAlan
+            </td>
+            <td>
+                <a href="/Faturalar/FaturaGetir/@k.Faturaid"
+                   class="btn btn-outline-primary">Güncelle</a>
+            </td>
+            <td>
+                <a href="/Faturalar/FaturaSil/@k.Faturaid"
+                   class="btn btn-outline-danger">Sil</a>
+            </td>
+
+        </tr>
+
+    }
+</table>*@
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="card">
+                            <div class="card-header">
+                                <a href="/Faturalar/FaturaEkle" class="btn btn-outline-warning"> Yeni Fatura Oluştur</a>
+                            </div>
+
+                            <div class="card-body">
+                                <table id="example1" class="table table-bordered table-striped">
+
+                                    <thead>
+                                        <tr>
+                                            <th> ID </th>
+                                            <th> Seri No </th>
+                                            <th> Sıra No </th>
+                                            <th> Tarih </th>
+                                            <th> Vergi Dairesi </th>
+                                            <th> Saat </th>
+                                            <th> Teslim Eden </th>
+                                            <th> Teslim Alan </th>
+                                            <th> Güncelle </th>
+                                            <th> Sil </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        @foreach (var k in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @k.Faturaid
+                                                </td>
+                                                <td>
+                                                    @k.FaturaSeriNo
+                                                </td>
+                                                <td>
+                                                    @k.FaturaSıraNo
+                                                </td>
+                                                <td>
+                                                    @k.Tarih.ToString("dd. MM. yyyy")
+                                                </td>
+                                                <td>
+                                                    @k.VergiDairesi
+                                                </td>
+                                                <td>
+                                                    @k.Saat.ToString("HH:mm")
+                                                </td>
+                                                <td>
+                                                    @k.TeslimEden
+                                                </td>
+                                                <td>
+                                                    @k.TeslimAlan
+                                                </td>
+                                                <td>
+                                                    <a href="/Faturalar/FaturaGetir/@k.Faturaid"
+                                                       class="btn btn-outline-primary">Güncelle</a>
+                                                </td>
+                                                <td>
+                                                    <a href="/Faturalar/FaturaSil/@k.Faturaid"
+                                                       class="btn btn-outline-danger" onclick="Sil()">Sil</a>
+                                                </td>
+                                            </tr>
+
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </div>
+</body>

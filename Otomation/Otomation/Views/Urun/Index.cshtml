@@ -1,0 +1,175 @@
+﻿@using Otomation.Models.Sınıflar
+@model List<Urun>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@*<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Urun Ad</th>
+        <th> Marka</th>
+        <th> Stok</th>
+        <th> AlisFiyat</th>
+        <th> SatisFiyat</th>
+        <th> Kategori </th>
+        <th> Görsel</th>
+        <th> Durum</th>
+        <th colspan="2"><a href="/Urun/UrunEKle" class="btn btn-outline-warning"> Yeni Ürün Oluştur</a> </th>
+
+    </tr>
+
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>
+                @k.Urunid
+            </td>
+            <td>
+                @k.UrunAd
+            </td>
+            <td>
+                @k.Marka
+            </td>
+            <td>
+                @k.Stok
+            </td>
+            <td>
+                @k.AlisFiyat
+            </td>
+            <td>
+                @k.SatisFiyat
+            </td>
+            <td>
+                @k.Kategori.KategoriAd
+            </td>
+
+            <td>
+                <img src="@k.UrunGorsel" width="100" height="100" alt="Product İmage">
+            </td>
+            <td>
+                @k.Durum
+            </td>
+            <td>
+                <a href="/Urun/UrunGetir/@k.Urunid"
+                   class="btn btn-outline-primary">Güncelle</a>
+            </td>
+            <td>
+                <a href="/Urun/UrunSil/@k.Urunid"
+                   class="btn btn-outline-danger">Sil</a>
+            </td>
+            <td>
+                <a href="/Detay/Index/@k.Urunid"
+                   class="btn btn-outline-success">Ürün</a>
+            </td>
+
+        </tr>
+
+     }
+</table>*@
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <!-- /.navbar -->
+        <!-- Main Sidebar Container -->
+        <!-- Content Wrapper. Contains page content -->
+        <!-- Content Header (Page header) -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+
+                        <!-- /.card -->
+
+                        <div class="card">
+                            <div class="card-header">
+                                <a href="/Urun/UrunEKle" class="btn btn-outline-warning">Ürün Ekle</a>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table id="example1" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Urun Ad</th>
+                                            <th> Marka</th>
+                                            <th> Stok</th>
+                                            <th> AlisFiyat</th>
+                                            <th> SatisFiyat</th>
+                                            <th> Kategori </th>
+                                            <th> Görsel</th>
+                                            <th> Durum</th>
+                                            <th> Güncelle</th>
+                                            <th> Sil</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var k in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @k.Urunid
+                                                </td>
+                                                <td>
+                                                    @k.UrunAd
+                                                </td>
+                                                <td>
+                                                    @k.Marka
+                                                </td>
+                                                <td>
+                                                    @k.Stok
+                                                </td>
+                                                <td>
+                                                    @k.AlisFiyat
+                                                </td>
+                                                <td>
+                                                    @k.SatisFiyat
+                                                </td>
+                                                <td>
+                                                    @k.Kategori.KategoriAd
+                                                </td>
+
+                                                <td>
+                                                    <img src="@k.UrunGorsel" width="100" height="100" />
+                                                </td>
+                                                <td>
+                                                    @k.Durum
+                                                </td>
+                                                <td>
+                                                    <a href="/Urun/UrunGetir/@k.Urunid"
+                                                       class="btn btn-outline-primary">Güncelle</a>
+                                                </td>
+
+                                                <td>
+                                                    <a href="/Urun/UrunSil/@k.Urunid"
+                                                       class="btn btn-outline-danger" onclick="Sil()">Sil</a>
+                                                </td>
+
+                                            </tr>
+
+                                        }
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+           
+        </section>
+
+    </div>
+
+</body>

@@ -1,0 +1,27 @@
+﻿@model Otomation.Models.Sınıflar.Admin
+
+
+@{
+    ViewBag.Title = "AdminGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Admin Getir </h2>
+<br />
+@using (Html.BeginForm("AdminGuncelle", "Admin", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.KullaniciAd)
+        @Html.TextBoxFor(x => x.KullaniciAd, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Sifre)
+        @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control", type = "password" })
+        <br />
+        @Html.LabelFor(x => x.Yetki)
+        @Html.TextBoxFor(x => x.Yetki, new { @class = "form-control" })
+        <br />
+        @Html.HiddenFor(x => x.Adminid)
+    </div>
+
+    <button class="btn btn-outline-warning" onclick="Güncelle()" > Güncelle </button>
+}

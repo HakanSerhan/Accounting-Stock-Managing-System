@@ -1,0 +1,25 @@
+﻿
+@model Otomation.Models.Sınıflar.Gider
+
+
+@{
+    ViewBag.Title = "GiderGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Gider Getir </h2>
+<br />
+@using (Html.BeginForm("GiderGuncelle", "Gider", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.Aciklama)
+        @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+        @Html.LabelFor(x => x.Tarih)
+        @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control", type = "date" })
+        @Html.LabelFor(x => x.Tutar)
+        @Html.TextBoxFor(x => x.Tutar, new { @class = "form-control", type = "number" })
+        @Html.HiddenFor(x => x.GiderId)
+    </div>
+
+    <button class="btn btn-outline-warning" onclick="Güncelle()"> Güncelle </button>
+}

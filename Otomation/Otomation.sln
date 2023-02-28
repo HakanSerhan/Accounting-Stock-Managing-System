@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Otomation", "Otomation\Otomation.csproj", "{B25C9500-9771-4F1D-AE3F-2AE2B84F0B1B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B25C9500-9771-4F1D-AE3F-2AE2B84F0B1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B25C9500-9771-4F1D-AE3F-2AE2B84F0B1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B25C9500-9771-4F1D-AE3F-2AE2B84F0B1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B25C9500-9771-4F1D-AE3F-2AE2B84F0B1B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {272F9BD1-D9B4-4C95-8AF0-FBABC3A27A9F}
+	EndGlobalSection
+EndGlobal

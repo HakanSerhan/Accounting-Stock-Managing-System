@@ -1,0 +1,107 @@
+﻿@using Otomation.Models.Sınıflar
+@model List<Departman>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@*<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Departman Adı</th>
+        <th colspan="2"><a href="/Departman/DepartmanEkle" class="btn btn-outline-success"> Yeni Departman Oluştur</a> </th>
+
+    </tr>
+
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>
+                @k.Departmanid
+            </td>
+            <td>
+                @k.DepartmanAd
+            </td>
+            <td>
+                <a href="/Departman/DepartmanGetir/@k.Departmanid"
+                   class="btn btn-outline-primary">Güncelle</a>
+            </td>
+            <td>
+                <a href="/Departman/DepartmanSil/@k.Departmanid"
+                   class="btn btn-outline-danger">Sil</a>
+            </td>
+            <td>
+                <a href="/Departman/DepartmanDetay/@k.Departmanid"
+                   class="btn btn-outline-warning">Detaylar</a>
+            </td>
+        </tr>
+    }
+</table>*@
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="card">
+                            <div class="card-header">
+                                <a href="/Departman/DepartmanEkle" class="btn btn-outline-warning"> Yeni Departman Oluştur</a>
+                            </div>
+
+                            <div class="card-body">
+                                <table id="example1" class="table table-bordered table-striped">
+
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Departman Adı</th>
+                                            <th>Güncelle</th>
+                                            <th>Sil</th>
+                                            <th>Detaylar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        @foreach (var k in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @k.Departmanid
+                                                </td>
+                                                <td>
+                                                    @k.DepartmanAd
+                                                </td>
+                                                <td>
+                                                    <a href="/Departman/DepartmanGetir/@k.Departmanid"
+                                                       class="btn btn-outline-primary">Güncelle</a>
+                                                </td>
+                                                <td>
+                                                    <a href="/Departman/DepartmanSil/@k.Departmanid"
+                                                       class="btn btn-outline-danger" onclick="Sil()">Sil</a>
+                                                </td>
+                                                <td>
+                                                    <a href="/Departman/DepartmanDetay/@k.Departmanid"
+                                                       class="btn btn-outline-warning">Detaylar</a>
+                                                </td>
+                                            </tr>
+
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </div>
+</body>

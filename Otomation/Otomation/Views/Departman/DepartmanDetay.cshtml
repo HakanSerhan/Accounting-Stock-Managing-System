@@ -1,0 +1,46 @@
+﻿@using Otomation.Models.Sınıflar
+@model List<Personel>
+@{
+    ViewBag.Title = "DepartmanDetay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3> Departman Detay</h3>
+
+<div style="background-color: lightblue; padding: 10px; border-radius: 10px; font-size: 18px; font-weight: 500;">@ViewBag.d</div>
+<br />
+
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Personel Adı</th>
+        <th>Personel Soyadı</th>
+        <th>Görsel</th>
+        <th>İlgili Birim</th>
+        <th>Satışlar</th>
+    </tr>
+    <tr>
+        @foreach(var k in Model)
+ { 
+    <tr>
+        <td>
+            @k.PersonelID
+        </td>
+        <td>
+            @k.PersonelAd
+        </td>
+        <td>
+            @k.PersonalSoyad
+        </td>
+        <td>
+            @k.PersonalGorsel
+        </td>
+        <td>
+            @k.Departman.DepartmanAd
+        </td>
+        <td>
+            <a href="/Departman/DepartmanPersonelSatis/@k.PersonelID" class="btn btn-outline-dark"> Satışlar</a>
+        </td>
+    </tr>
+ }
+</table>

@@ -1,0 +1,116 @@
+﻿@using Otomation.Models.Sınıflar
+@model List<Gider>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@*<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Açıklama</th>
+        <th>Tarih</th>
+        <th>Tutar</th>
+        <th colspan="2"><a href="/Gider/GiderEkle" class="btn btn-outline-warning"> Yeni Gider Oluştur</a> </th>
+
+    </tr>
+
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>
+                @k.GiderId
+            </td>
+            <td>
+                @k.Aciklama
+            </td>
+            <td>
+                @k.Tarih
+            </td>
+            <td>
+                @k.Tutar
+            </td>
+            <td>
+                <a href="/Gider/GiderGetir/@k.GiderId"
+                   class="btn btn-outline-primary">Güncelle</a>
+            </td>
+            <td>
+                <a href="/Gider/GiderSil/@k.GiderId"
+                   class="btn btn-outline-danger">Sil</a>
+            </td>
+
+        </tr>
+
+    }
+</table>*@
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="card">
+                            <div class="card-header">
+                                <a href="/Gider/GiderEkle" class="btn btn-outline-warning"> Yeni Gider Oluştur</a>
+                            </div>
+
+                            <div class="card-body">
+                                <table id="example1" class="table table-bordered table-striped">
+
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Açıklama</th>
+                                            <th>Tarih</th>
+                                            <th>Tutar</th>
+                                            <th> Güncelle </th>
+                                            <th> Sil </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        @foreach (var k in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @k.GiderId
+                                                </td>
+                                                <td>
+                                                    @k.Aciklama
+                                                </td>
+                                                <td>
+                                                    @k.Tarih
+                                                </td>
+                                                <td>
+                                                    @k.Tutar
+                                                </td>
+                                                <td>
+                                                    <a href="/Gider/GiderGetir/@k.GiderId"
+                                                       class="btn btn-outline-primary">Güncelle</a>
+                                                </td>
+                                                <td>
+                                                    <a href="/Gider/GiderSil/@k.GiderId"
+                                                       class="btn btn-outline-danger" onclick="Sil()">Sil</a>
+                                                </td>
+                                            </tr>
+
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </div>
+</body>
